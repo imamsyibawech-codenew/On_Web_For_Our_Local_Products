@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keranjang Belanja — Lokalmart</title>
+  <link rel="icon" href="assets/logo-lokalmart.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header scrolled">
+    <nav class="nav container">
+      <a href="index.html" class="logo" aria-label="Lokalmart — Beranda">
+        <img src="assets/logo-lokalmart.svg" alt="" class="logo-img" width="42" height="42" decoding="async">
+        <span class="logo-text">Lokalmart</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu"><span></span><span></span><span></span></button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Beranda</a></li>
+        <li><a href="index.html#produk" class="nav-link">Produk</a></li>
+        <li><a href="keranjang.html" class="nav-link active">Keranjang</a></li>
+        <li><a href="login-penjual.html" class="nav-link" id="sellerNavBtn">Masuk Penjual</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="index.html#produk" class="btn btn-outline btn-sm">Lanjut Belanja</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <div class="container cart-container">
+      <h1 class="page-title" data-animate>Keranjang Belanja</h1>
+
+      <div class="cart-layout">
+        <div class="cart-items-panel" id="cartItemsPanel">
+          <div class="loading-state"><div class="spinner"></div><p>Memuat keranjang...</p></div>
+        </div>
+
+        <aside class="cart-summary" id="cartSummary" hidden>
+          <h2>Ringkasan Pesanan</h2>
+          <div class="summary-row">
+            <span>Total Item</span>
+            <strong id="summaryCount">0</strong>
+          </div>
+          <div class="summary-row summary-total">
+            <span>Total Harga</span>
+            <strong id="summaryTotal">Rp 0</strong>
+          </div>
+
+          <hr class="summary-divider">
+
+          <h3>Data Pengiriman</h3>
+          <form id="checkoutForm">
+            <div class="form-group">
+              <label for="checkoutNama">Nama Penerima <span class="required">*</span></label>
+              <input type="text" id="checkoutNama" required>
+            </div>
+            <div class="form-group">
+              <label for="checkoutEmail">Email <span class="required">*</span></label>
+              <input type="email" id="checkoutEmail" required>
+            </div>
+            <div class="form-group">
+              <label for="checkoutTelepon">Telepon <span class="required">*</span></label>
+              <input type="tel" id="checkoutTelepon" required>
+            </div>
+            <div class="form-group">
+              <label for="checkoutAlamat">Alamat Lengkap <span class="required">*</span></label>
+              <textarea id="checkoutAlamat" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="checkoutCatatan">Catatan (opsional)</label>
+              <input type="text" id="checkoutCatatan" placeholder="Patokan alamat, waktu kirim, dll.">
+            </div>
+
+            <div class="form-errors" id="checkoutErrors" hidden></div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-full" id="checkoutBtn">
+              Buat Pesanan
+            </button>
+          </form>
+        </aside>
+      </div>
+
+      <div class="checkout-success" id="checkoutSuccess" hidden>
+        <div class="success-icon">✓</div>
+        <h2>Pesanan Berhasil!</h2>
+        <p id="checkoutSuccessMsg"></p>
+        <p class="order-id" id="orderIdDisplay"></p>
+        <a href="index.html#produk" class="btn btn-primary">Lanjut Belanja</a>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/images.js"></script>
+  <script src="js/cart-ui.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/keranjang.js"></script>
+</body>
+</html>

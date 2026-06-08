@@ -1,0 +1,7 @@
+node_modules/
+backend/data/umkm.json
+backend/data/sellers.json
+backend/data/carts.json
+backend/data/orders.json
+backend/uploads/*
+!backend/uploads/.gitkeep

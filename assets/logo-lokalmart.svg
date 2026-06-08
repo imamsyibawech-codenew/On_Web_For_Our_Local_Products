@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Logo Lokalmart  motif ukir Jepara">
+  <defs>
+    <linearGradient id="wood" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9a6b3f"/>
+      <stop offset="50%" stop-color="#6b4423"/>
+      <stop offset="100%" stop-color="#4a2f18"/>
+    </linearGradient>
+    <linearGradient id="carve" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0dcc0"/>
+      <stop offset="100%" stop-color="#c9a06c"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="31" fill="url(#wood)"/>
+  <circle cx="32" cy="32" r="27" fill="none" stroke="#d4a574" stroke-width="1.2" opacity="0.6"/>
+  <!-- Motif bunga ukir Jepara -->
+  <path d="M32 14c-2 5-8 7-8 14s6 11 8 14c2-3 8-6 8-14s-6-9-8-14z" fill="url(#carve)"/>
+  <path d="M32 20v16M26 24q6 3 12 0M26 30q6 4 12 0" fill="none" stroke="#5c3d1e" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+  <!-- Sulur daun khas ukiran -->
+  <path d="M16 30c-5-2-6-8-3-12 4 2 5 7 3 12z" fill="#d4a574"/>
+  <path d="M48 30c5-2 6-8 3-12-4 2-5 7-3 12z" fill="#d4a574"/>
+  <path d="M20 42c-3 4-2 9 2 11 2-4 1-8-2-11z" fill="#b8894f"/>
+  <path d="M44 42c3 4 2 9-2 11-2-4-1-8 2-11z" fill="#b8894f"/>
+  <circle cx="32" cy="27" r="3" fill="#5c3d1e" opacity="0.35"/>
+</svg>

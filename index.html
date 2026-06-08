@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lokalmart — Jembatan digital modern untuk mengenalkan dan memasarkan produk lokal berkualitas dari UMKM Indonesia.">
+  <title>Lokalmart — Produk Lokal Berkualitas</title>
+  <link rel="icon" href="assets/logo-lokalmart.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="logo" aria-label="Lokalmart — Beranda">
+        <img src="assets/logo-lokalmart.svg" alt="" class="logo-img" width="42" height="42" decoding="async">
+        <span class="logo-text">Lokalmart</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#beranda" class="nav-link active">Beranda</a></li>
+        <li><a href="#produk" class="nav-link">Produk</a></li>
+        <li><a href="#kategori" class="nav-link">Kategori</a></li>
+        <li><a href="#tentang" class="nav-link">Tentang</a></li>
+        <li><a href="daftar-umkm.html" class="nav-link nav-link-cta">Daftar UMKM</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn-icon" id="searchToggle" aria-label="Cari produk">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+        </button>
+        <a href="keranjang.html" class="btn-icon cart-btn" aria-label="Keranjang belanja">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-count" id="cartCount" hidden>0</span>
+        </a>
+        <a href="login-penjual.html" class="btn btn-outline btn-sm" id="sellerNavBtn">Masuk Penjual</a>
+      </div>
+    </nav>
+
+    <div class="search-bar" id="searchBar" hidden>
+      <div class="container">
+        <form class="search-form" id="searchForm">
+          <input type="search" id="searchInput" placeholder="Cari produk lokal, UMKM, atau kategori..." autocomplete="off">
+          <button type="submit" class="btn btn-primary">Cari</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="beranda">
+      <div class="hero-bg"></div>
+      <div class="container hero-content">
+        <div class="hero-text">
+          <span class="hero-badge">Platform Produk Lokal Indonesia</span>
+          <h1 class="hero-title">
+            Temukan Keajaiban<br>
+            <span class="text-gradient">Produk Lokal</span> di Ujung Jari
+          </h1>
+          <p class="hero-desc">
+            Lokalmart adalah jembatan digital modern yang menghubungkan Anda dengan produk lokal berkualitas dari UMKM di seluruh Indonesia.
+          </p>
+          <div class="hero-actions">
+            <a href="#produk" class="btn btn-primary btn-lg">Mulai Jelajahi</a>
+            <a href="daftar-umkm.html" class="btn btn-outline btn-lg">Daftar sebagai UMKM</a>
+          </div>
+          <div class="hero-stats" id="heroStats">
+            <div class="stat">
+              <strong data-stat="totalUmkm">—</strong>
+              <span>UMKM Terdaftar</span>
+            </div>
+            <div class="stat">
+              <strong data-stat="totalProvinces">—</strong>
+              <span>Provinsi</span>
+            </div>
+            <div class="stat">
+              <strong data-stat="totalProducts">—</strong>
+              <span>Produk Lokal</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card hero-card-1">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Honey_in_jar.jpg/320px-Honey_in_jar.jpg" alt="Madu Hutan Kalimantan" class="hero-card-img" width="320" height="240" loading="lazy" decoding="async">
+            <p>Madu Hutan Kalimantan</p>
+          </div>
+          <div class="hero-card hero-card-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Tenun_ikat_ende.jpg/320px-Tenun_ikat_ende.jpg" alt="Tenun Ikat Sumba" class="hero-card-img" width="320" height="240" loading="lazy" decoding="async">
+            <p>Tenun Ikat Sumba</p>
+          </div>
+          <div class="hero-card hero-card-3">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/320px-A_small_cup_of_coffee.JPG" alt="Kopi Gayo Aceh" class="hero-card-img" width="320" height="240" loading="lazy" decoding="async">
+            <p>Kopi Gayo Aceh</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Katalog Produk -->
+    <section class="products" id="produk">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-tag">Katalog Lengkap</span>
+          <h2 class="section-title">Produk Lokal Unggulan</h2>
+          <p class="section-desc">Kerajinan khas, makanan tradisional, hasil pertanian, dan produk perikanan dari seluruh nusantara.</p>
+        </div>
+
+        <div class="filter-tabs" id="filterTabs" data-animate>
+          <button class="filter-tab active" data-category="all">Semua</button>
+          <button class="filter-tab" data-category="kerajinan">🎨 Kerajinan Khas</button>
+          <button class="filter-tab" data-category="makanan">🍽️ Makanan Khas</button>
+          <button class="filter-tab" data-category="pertanian">🌾 Hasil Pertanian</button>
+          <button class="filter-tab" data-category="perikanan">🐟 Perikanan</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+          <div class="loading-state">
+            <div class="spinner"></div>
+            <p>Memuat produk...</p>
+          </div>
+        </div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <p>😔 Tidak ada produk yang cocok dengan pencarian Anda.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kategori Produk UMKM -->
+    <section class="categories" id="kategori">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-tag">Katalog UMKM</span>
+          <h2 class="section-title">Kategori Produk Lokal</h2>
+          <p class="section-desc">Jelajahi beragam produk unggulan dari pelaku UMKM di seluruh nusantara.</p>
+        </div>
+
+        <div class="category-grid" id="categoryGrid">
+          <a href="#produk" class="category-card" data-category="kerajinan" data-animate data-animate-delay="1">
+            <div class="category-icon">🎨</div>
+            <h3>Kerajinan Khas</h3>
+            <p>Tenun, ukiran kayu, batik, dan anyaman tradisional.</p>
+            <span class="category-count" data-cat-count="kerajinan">— produk</span>
+          </a>
+
+          <a href="#produk" class="category-card" data-category="makanan" data-animate data-animate-delay="2">
+            <div class="category-icon">🍽️</div>
+            <h3>Makanan Khas</h3>
+            <p>Olahan tradisional, camilan, kopi, dan madu lokal.</p>
+            <span class="category-count" data-cat-count="makanan">— produk</span>
+          </a>
+
+          <a href="#produk" class="category-card" data-category="pertanian" data-animate data-animate-delay="3">
+            <div class="category-icon">🌾</div>
+            <h3>Hasil Pertanian</h3>
+            <p>Beras organik, rempah, kakao, dan komoditas lokal.</p>
+            <span class="category-count" data-cat-count="pertanian">— produk</span>
+          </a>
+
+          <a href="#produk" class="category-card" data-category="perikanan" data-animate data-animate-delay="4">
+            <div class="category-icon">🐟</div>
+            <h3>Perikanan</h3>
+            <p>Ikan asin, udang kering, teripang, dan olahan laut.</p>
+            <span class="category-count" data-cat-count="perikanan">— produk</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Daftar UMKM -->
+    <section class="cta-section" data-animate="fade">
+      <div class="container cta-box">
+        <div class="cta-content">
+          <h2>Punya Produk Lokal Berkualitas?</h2>
+          <p>Daftarkan UMKM Anda di Lokalmart dan jangkau ribuan pembeli di seluruh Indonesia.</p>
+        </div>
+        <a href="daftar-umkm.html" class="btn btn-primary btn-lg">Daftar Sekarang</a>
+      </div>
+    </section>
+
+    <!-- Tentang -->
+    <section class="about" id="tentang">
+      <div class="container about-grid">
+        <div class="about-content" data-animate>
+          <span class="section-tag">Visi Kami</span>
+          <h2 class="section-title">Jembatan Digital untuk Produk Lokal</h2>
+          <p>
+            Lokalmart hadir untuk memberdayakan UMKM Indonesia dengan platform digital yang mudah diakses. Kami percaya produk lokal berkualitas layak dikenal lebih luas — tidak hanya di pasar tradisional, tetapi juga di dunia digital.
+          </p>
+          <ul class="about-features">
+            <li>
+              <span class="feature-icon">✓</span>
+              Mendukung ekonomi kerakyatan melalui UMKM
+            </li>
+            <li>
+              <span class="feature-icon">✓</span>
+              Menghubungkan produsen lokal dengan pembeli nasional
+            </li>
+            <li>
+              <span class="feature-icon">✓</span>
+              Mempromosikan kekayaan budaya melalui produk autentik
+            </li>
+          </ul>
+        </div>
+        <div class="about-visual" data-animate data-animate-delay="2">
+          <div class="about-card">
+            <blockquote>
+              "Setiap produk lokal adalah cerita, tradisi, dan kerja keras yang pantas dihargai."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="kontak">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="Lokalmart">
+            <img src="assets/logo-lokalmart.svg" alt="" class="logo-img" width="42" height="42" decoding="async">
+            <span class="logo-text">Lokalmart</span>
+          </a>
+          <p>Jembatan digital modern dalam mengenalkan dan memasarkan produk lokal yang berkualitas.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="WhatsApp">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#produk">Produk</a></li>
+            <li><a href="#kategori">Kategori</a></li>
+            <li><a href="#tentang">Tentang Kami</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Untuk UMKM</h4>
+          <ul>
+            <li><a href="daftar-umkm.html">Daftar sebagai Penjual</a></li>
+            <li><a href="#produk">Lihat Katalog</a></li>
+            <li><a href="#">Syarat & Ketentuan</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Hubungi Kami</h4>
+          <p>📧 hello@lokalmart.id</p>
+          <p>📞 +62 812-3456-7890</p>
+          <p>📍 Jakarta, Indonesia</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Lokalmart. Semua hak dilindungi.</p>
+        <p>Dibuat dengan ❤️ untuk produk lokal Indonesia</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/images.js"></script>
+  <script src="js/cart-ui.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

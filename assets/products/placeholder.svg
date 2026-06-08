@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" role="img" aria-label="Foto produk">
+  <rect width="640" height="480" fill="#e8f0ec"/>
+  <rect x="80" y="60" width="480" height="360" rx="12" fill="#d4e4dc"/>
+  <circle cx="260" cy="180" r="48" fill="#b7cfc3"/>
+  <path d="M120 360 L240 240 L360 300 L520 200 L520 360 Z" fill="#9bb8a8"/>
+</svg>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Penjual — Lokalmart</title>
+  <link rel="icon" href="assets/logo-lokalmart.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header scrolled">
+    <nav class="nav container">
+      <a href="index.html" class="logo" aria-label="Lokalmart — Beranda">
+        <img src="assets/logo-lokalmart.svg" alt="" class="logo-img" width="42" height="42" decoding="async">
+        <span class="logo-text">Lokalmart</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Beranda</a></li>
+        <li><a href="index.html#produk" class="nav-link">Katalog</a></li>
+        <li><a href="dashboard-penjual.html" class="nav-link active">Dashboard</a></li>
+      </ul>
+      <div class="nav-actions">
+        <span class="seller-greeting" id="sellerGreeting"></span>
+        <button class="btn btn-outline btn-sm" id="logoutBtn">Keluar</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-main dashboard-main">
+    <div class="container">
+      <div class="dashboard-header" data-animate>
+        <div>
+          <h1>Dashboard Penjual</h1>
+          <p id="dashboardSubtitle">Kelola produk dan upload foto produk Anda</p>
+        </div>
+        <button class="btn btn-primary" id="addProductBtn">+ Tambah Produk</button>
+      </div>
+
+      <!-- Form Tambah/Edit Produk -->
+      <div class="dashboard-panel" id="productFormPanel" hidden>
+        <h2 id="formPanelTitle">Tambah Produk Baru</h2>
+        <form class="umkm-form" id="productForm" enctype="multipart/form-data">
+          <input type="hidden" id="editProductId">
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="prodName">Nama Produk <span class="required">*</span></label>
+              <input type="text" id="prodName" required>
+            </div>
+            <div class="form-group">
+              <label for="prodCategory">Kategori <span class="required">*</span></label>
+              <select id="prodCategory" required>
+                <option value="kerajinan">Kerajinan Khas</option>
+                <option value="makanan">Makanan Khas</option>
+                <option value="pertanian">Hasil Pertanian</option>
+                <option value="perikanan">Perikanan</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="prodPrice">Harga (Rp) <span class="required">*</span></label>
+              <input type="number" id="prodPrice" required min="1">
+            </div>
+            <div class="form-group">
+              <label for="prodUnit">Satuan <span class="required">*</span></label>
+              <input type="text" id="prodUnit" required placeholder="kg, pcs, 250g">
+            </div>
+            <div class="form-group">
+              <label for="prodOrigin">Asal Daerah <span class="required">*</span></label>
+              <input type="text" id="prodOrigin" required placeholder="Kota, Provinsi">
+            </div>
+            <div class="form-group">
+              <label for="prodProvince">Provinsi <span class="required">*</span></label>
+              <input type="text" id="prodProvince" required>
+            </div>
+            <div class="form-group">
+              <label for="prodStock">Stok <span class="required">*</span></label>
+              <input type="number" id="prodStock" required min="0">
+            </div>
+          </div>
+
+          <div class="form-group form-group-full">
+            <label for="prodDescription">Deskripsi <span class="required">*</span></label>
+            <textarea id="prodDescription" rows="3" required></textarea>
+          </div>
+
+          <div class="form-group form-group-full">
+            <label for="prodHighlights">Keunggulan (pisahkan dengan koma)</label>
+            <input type="text" id="prodHighlights" placeholder="Organik, Tanpa pengawet, Buatan tangan">
+          </div>
+
+          <div class="form-group form-group-full">
+            <label for="prodImage">Foto Produk</label>
+            <div class="file-upload">
+              <input type="file" id="prodImage" accept="image/jpeg,image/png,image/webp">
+              <div class="file-preview" id="imagePreview"></div>
+            </div>
+            <span class="form-hint">JPG, PNG, atau WebP. Maks. 5MB.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="prodFeatured"> Tandai sebagai produk unggulan
+            </label>
+          </div>
+
+          <div class="form-errors" id="productFormErrors" hidden></div>
+
+          <div class="form-actions form-actions-row">
+            <button type="submit" class="btn btn-primary" id="saveProductBtn">Simpan Produk</button>
+            <button type="button" class="btn btn-outline" id="cancelProductBtn">Batal</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Daftar Produk -->
+      <div class="dashboard-panel">
+        <h2>Produk Saya <span class="product-count-badge" id="myProductCount">0</span></h2>
+        <div class="seller-product-list" id="sellerProductList">
+          <div class="loading-state"><div class="spinner"></div><p>Memuat produk...</p></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/cart-ui.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/dashboard-penjual.js"></script>
+</body>
+</html>

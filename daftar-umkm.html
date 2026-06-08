@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Daftarkan UMKM Anda di Lokalmart dan jangkau pembeli di seluruh Indonesia.">
+  <title>Daftar UMKM — Lokalmart</title>
+  <link rel="icon" href="assets/logo-lokalmart.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header scrolled" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="logo" aria-label="Lokalmart — Beranda">
+        <img src="assets/logo-lokalmart.svg" alt="" class="logo-img" width="42" height="42" decoding="async">
+        <span class="logo-text">Lokalmart</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html#beranda" class="nav-link">Beranda</a></li>
+        <li><a href="index.html#produk" class="nav-link">Produk</a></li>
+        <li><a href="index.html#tentang" class="nav-link">Tentang</a></li>
+        <li><a href="daftar-umkm.html" class="nav-link active">Daftar UMKM</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-outline btn-sm">← Beranda</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="form-section">
+      <div class="container form-container" data-animate>
+        <div class="form-header">
+          <span class="section-tag">Bergabung dengan Kami</span>
+          <h1 class="section-title">Daftar UMKM di Lokalmart</h1>
+          <p class="section-desc">
+            Jadikan produk lokal Anda dikenal lebih luas. Isi formulir di bawah dan tim kami akan menghubungi Anda.
+          </p>
+        </div>
+
+        <form class="umkm-form" id="umkmForm" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="namaUsaha">Nama Usaha / Brand <span class="required">*</span></label>
+              <input type="text" id="namaUsaha" name="namaUsaha" placeholder="Contoh: Dapur Minang Asli" required>
+            </div>
+
+            <div class="form-group">
+              <label for="namaPemilik">Nama Pemilik <span class="required">*</span></label>
+              <input type="text" id="namaPemilik" name="namaPemilik" placeholder="Nama lengkap pemilik usaha" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="email@usahaanda.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="telepon">Nomor Telepon / WhatsApp <span class="required">*</span></label>
+              <input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx" required>
+            </div>
+
+            <div class="form-group">
+              <label for="kategoriProduk">Kategori Produk <span class="required">*</span></label>
+              <select id="kategoriProduk" name="kategoriProduk" required>
+                <option value="">Pilih kategori</option>
+                <option value="kerajinan">Kerajinan Khas</option>
+                <option value="makanan">Makanan Khas</option>
+                <option value="pertanian">Hasil Pertanian</option>
+                <option value="perikanan">Perikanan</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="provinsi">Provinsi <span class="required">*</span></label>
+              <input type="text" id="provinsi" name="provinsi" placeholder="Contoh: Jawa Barat" required>
+            </div>
+
+            <div class="form-group">
+              <label for="kota">Kota / Kabupaten <span class="required">*</span></label>
+              <input type="text" id="kota" name="kota" placeholder="Contoh: Bandung" required>
+            </div>
+
+            <div class="form-group">
+              <label for="website">Website / Media Sosial</label>
+              <input type="url" id="website" name="website" placeholder="https://instagram.com/usahaanda (opsional)">
+            </div>
+          </div>
+
+          <div class="form-group form-group-full">
+            <label for="alamat">Alamat Lengkap <span class="required">*</span></label>
+            <textarea id="alamat" name="alamat" rows="2" placeholder="Jl. ..., RT/RW, Kelurahan, Kecamatan" required></textarea>
+          </div>
+
+          <div class="form-group form-group-full">
+            <label for="deskripsi">Deskripsi Usaha & Produk <span class="required">*</span></label>
+            <textarea id="deskripsi" name="deskripsi" rows="4" placeholder="Ceritakan tentang usaha Anda, produk unggulan, dan keunikan produk lokal yang Anda tawarkan (min. 20 karakter)" required minlength="20"></textarea>
+            <span class="form-hint" id="deskripsiHint">0 / 20 karakter minimum</span>
+          </div>
+
+          <div class="form-errors" id="formErrors" hidden></div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+              Kirim Pendaftaran
+            </button>
+            <p class="form-note">Dengan mendaftar, Anda menyetujui syarat & ketentuan Lokalmart.</p>
+          </div>
+        </form>
+
+        <div class="form-success" id="formSuccess" hidden>
+          <div class="success-icon">✓</div>
+          <h2>Pendaftaran Berhasil!</h2>
+          <p id="successMessage"></p>
+          <a href="index.html#produk" class="btn btn-primary">Jelajahi Produk</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Lokalmart. Semua hak dilindungi.</p>
+      <p>Dibuat dengan ❤️ untuk produk lokal Indonesia</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/daftar.js"></script>
+</body>
+</html>
