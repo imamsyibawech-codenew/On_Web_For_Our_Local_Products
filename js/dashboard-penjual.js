@@ -50,9 +50,10 @@ function openProductForm(product = null) {
     document.getElementById('prodDescription').value = product.description;
     document.getElementById('prodHighlights').value = (product.highlights || []).join(', ');
     document.getElementById('prodFeatured').checked = product.featured;
-    document.getElementById('imagePreview').innerHTML = product.image
-      ? `<img src="${product.image}" alt="Preview" class="preview-img">`
-      : `<img src="/assets/products/placeholder.svg" alt="Belum ada foto" class="preview-img">`;
+    document.getElementById('imagePreview').innerHTML = renderProductImage(
+      { name: product.name || 'Preview produk', image: product.image, imageThumb: product.imageThumb },
+      { size: 'thumb', className: 'preview-img' }
+    );
   } else {
     form.reset();
     document.getElementById('editProductId').value = '';
@@ -147,7 +148,7 @@ async function loadSellerProducts() {
         (p) => `
       <div class="seller-product-item">
         <div class="seller-product-thumb">
-          ${p.image ? `<img src="${p.image}" alt="${p.name}">` : `<img src="/assets/products/placeholder.svg" alt="${p.name}">`}
+          ${renderProductImage(p, { size: 'thumb' })}
         </div>
         <div class="seller-product-info">
           <h3>${p.name}</h3>

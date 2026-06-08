@@ -1,4 +1,16 @@
 const PRODUCT_PLACEHOLDER = '/assets/products/placeholder.svg';
+const IMAGE_FALLBACK_HANDLER =
+  "this.onerror=null;this.removeAttribute('srcset');this.removeAttribute('sizes');this.src='" +
+  PRODUCT_PLACEHOLDER +
+  "'";
+
+function escapeImageAttr(value = '') {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('"', '&quot;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;');
+}
 
 function getProductImageSrc(product, size = 'thumb') {
   if (size === 'thumb' && product.imageThumb) return product.imageThumb;
@@ -15,15 +27,15 @@ function renderProductImage(product, options = {}) {
   const dims = isThumb ? { w: 320, h: 240 } : { w: 640, h: 480 };
 
   if (!src) {
-    return `<img src="${PRODUCT_PLACEHOLDER}" alt="${product.name}" class="product-img ${className}" width="${dims.w}" height="${dims.h}" loading="lazy" decoding="async">`;
+    return `<img src="${PRODUCT_PLACEHOLDER}" alt="${escapeImageAttr(product.name)}" class="product-img ${escapeImageAttr(className)}" width="${dims.w}" height="${dims.h}" loading="lazy" decoding="async">`;
   }
 
   const loading = priority ? 'eager' : 'lazy';
   const priorityAttr = priority ? ' fetchpriority="high"' : '';
   const srcset =
     product.imageThumb && product.image && product.imageThumb !== product.image
-      ? ` srcset="${product.imageThumb} 320w, ${product.image} 640w" sizes="${isThumb ? '(max-width:768px) 45vw, 280px' : '(max-width:768px) 100vw, 640px'}"`
+      ? ` srcset="${escapeImageAttr(product.imageThumb)} 320w, ${escapeImageAttr(product.image)} 640w" sizes="${isThumb ? '(max-width:768px) 45vw, 280px' : '(max-width:768px) 100vw, 640px'}"`
       : '';
 
-  return `<img src="${src || PRODUCT_PLACEHOLDER}" alt="${product.name}" class="product-img ${className}" width="${dims.w}" height="${dims.h}"${srcset} loading="${loading}" decoding="async"${priorityAttr} onerror="this.onerror=null;this.src='${PRODUCT_PLACEHOLDER}'">`;
+  return `<img src="${escapeImageAttr(src || PRODUCT_PLACEHOLDER)}" alt="${escapeImageAttr(product.name)}" class="product-img ${escapeImageAttr(className)}" width="${dims.w}" height="${dims.h}"${srcset} loading="${loading}" decoding="async"${priorityAttr} onerror="${IMAGE_FALLBACK_HANDLER}">`;
 }
